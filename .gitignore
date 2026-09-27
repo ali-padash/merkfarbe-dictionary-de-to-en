@@ -1,0 +1,2 @@
+# The packed dictionary and its manifest are release files, not commits.
+dist/

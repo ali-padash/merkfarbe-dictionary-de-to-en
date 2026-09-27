@@ -1,0 +1,19 @@
+The MerkFarbe German–English dictionary is adapted from Wiktionary
+(English Wiktionary, as extracted by kaikki.org with wiktextract, and German
+Wiktionary). Wiktionary's text is dual-licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International licence and the GNU Free
+Documentation Licence; this dictionary is made available under
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    https://creativecommons.org/licenses/by-sa/4.0/
+    Full legal text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Attribution: Wiktionary and its contributors (https://en.wiktionary.org/,
+https://de.wiktionary.org/). Each entry's Wiktionary page, linked from the
+entry, lists its authors. Extraction: kaikki.org (https://kaikki.org/),
+wiktextract — Tatu Ylonen, "Wiktextract: Wiktionary as Machine-Readable
+Structured Data", LREC 2022, pp. 1317-1325.
+
+Changes: entries were selected, shortened and reorganised into a SQLite
+database for a phone. Added: a short table of glosses for word parts (such
+as -ung), written for MerkFarbe, released under the same licence.
