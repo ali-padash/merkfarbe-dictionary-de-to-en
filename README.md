@@ -11,7 +11,7 @@ Each release is one version of the dictionary and carries two files:
 
 | File | What it is |
 |---|---|
-| `wiktionary_de_phone-<date>.sqlite3.xz` | The dictionary, xz-compressed (about 34 MB; 181 MB unpacked). |
+| `dictionary_de_en-<date>.sqlite3.xz` | The dictionary, xz-compressed (about 30 MB; 140 MB unpacked). Called `wiktionary_de_phone-<date>.sqlite3.xz` up to schema 5. |
 | `manifest.json` | Which dictionary is current: its version, schema, download URL, sizes and SHA-256 checksums. |
 
 The app reads `manifest.json` from the latest release, at an address that
@@ -31,28 +31,33 @@ version downloads nothing.
 ```json
 {
   "format": 1,
-  "version": "2026-09-25T17:11:26",
-  "schema": 5,
-  "entries": 200925,
-  "file": "wiktionary_de_phone-2026-09-25.sqlite3.xz",
-  "url": "https://github.com/ali-padash/merkfarbe-dictionary-de-to-en/releases/download/dictionary-2026-09-25/wiktionary_de_phone-2026-09-25.sqlite3.xz",
-  "tag": "dictionary-2026-09-25",
-  "compressed_bytes": 33940636,
-  "compressed_sha256": "20b8def49592eccd972a73527db40629d5fd5dd2ce1237a4e115c6d0d665e597",
-  "bytes": 181043200,
-  "sha256": "f94c33c9a12ebde58d3b38ea7c450141bb22f2a7c1328e33b75a2df66f5d80a2"
+  "version": "2026-10-08T03:36:58",
+  "schema": 6,
+  "entries": 201595,
+  "file": "dictionary_de_en-2026-10-08.sqlite3.xz",
+  "url": "https://github.com/ali-padash/merkfarbe-dictionary-de-to-en/releases/download/dictionary-2026-10-08/dictionary_de_en-2026-10-08.sqlite3.xz",
+  "tag": "dictionary-2026-10-08",
+  "compressed_bytes": 30095412,
+  "compressed_sha256": "c9e37a64351b0847c2718d2d1582bfc0eccc2f3c2d9ead533d8b6b0c184268f7",
+  "bytes": 139722752,
+  "sha256": "54f006316d1b8c6f8d1475dbccd691614df14b5cbb55f10fd36966e4fe77418e"
 }
 ```
 
 - `format` is the manifest's own layout; an app refuses a format it does not know.
 - `version` is when the phone dictionary was built; a newer one replaces an older one.
 - `schema` is the database layout; an app installs only a schema it can read.
+  Schema 6 (October 2026) stores each inflected form once with the entries it
+  belongs to, packed; an app that reads schema 5 needs updating first.
 
 ## Using it without the app
 
 Download the `.xz` from a release and unpack it with any xz tool
 (`xz -d file.sqlite3.xz`, 7-Zip on Windows). The result is an ordinary SQLite
-database.
+database. Most of it reads as it is; the one packed column is `forms.refs`,
+each spelling's entries and notes as pairs of LEB128 varints (the entry
+number less the previous pair's, then the note's number in `notes`, 0 for
+none).
 
 ## Where the words come from, and the licence
 
