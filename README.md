@@ -1,6 +1,6 @@
-# MerkFarbe dictionary (German → English)
+# ChamFlick dictionary (German → English)
 
-The German–English dictionary the **MerkFarbe** Android app downloads on
+The German–English dictionary the **ChamFlick** Android app downloads on
 first start. It is a SQLite database built from Wiktionary, packed small for
 phones. This repository holds nothing but that download: the app's code is
 elsewhere.
@@ -73,7 +73,7 @@ Wiktionary's text is available under the
 and so is this dictionary, which is adapted from it: it has been reduced and
 reorganised for a phone. The one thing added is a short table of glosses for
 word parts such as *-ung* ("-ing, -tion: the act or its result"), written for
-MerkFarbe, which explain the pieces of a compound.
+ChamFlick, which explain the pieces of a compound.
 You may share and adapt it, also commercially, as long as you credit
 Wiktionary and its contributors and share what you make under the same
 licence. See [LICENSE](LICENSE).
@@ -82,7 +82,7 @@ Every entry links back to its Wiktionary page, where its authors are listed.
 
 ## Making a release (for the maintainer)
 
-From the MerkFarbe project:
+From the ChamFlick project:
 
 ```
 python -m dictionary.publish_phone --out E:/merkfarbe-dictionary-de-to-en/dist
